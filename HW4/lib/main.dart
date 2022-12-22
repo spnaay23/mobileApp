@@ -17,13 +17,25 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.black,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios),
+            icon: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.redAccent,
+            ),
             onPressed: () {},
           ),
           title: Center(child: Text("Chiang Mai")),
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.ios_share)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.favorite_border)),
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.ios_share,
+                  color: Colors.redAccent,
+                )),
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.favorite_border,
+                )),
           ],
         ),
         body: SingleChildScrollView(
@@ -298,7 +310,13 @@ class MyApp extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.all(0),
-                    child: Image.asset("images/map.png"),
+                    
+                    child: ClipRRect(
+                      
+                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                      
+                      child: Image.asset("images/map.png"),
+                    ),
                   ),
                   SizedBox(
                     height: 10,
