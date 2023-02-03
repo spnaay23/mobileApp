@@ -19,7 +19,7 @@ class PokemonInfo {
   /// name of Pokemon
   final String name;
 
-  /// lists of type(s) maximum 2 types ['nine', 'dragon']
+  /// lists of type(s) maximum 2 types
   final List<String> types;
 
   /// name of the ability
@@ -36,6 +36,8 @@ class PokemonInfo {
   String typesToString() {
     return types.map((type) => capitalize(type)).join('/');
   }
+
+  
 }
 
 /// Generates url to pokemon image in PokeAPI github

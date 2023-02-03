@@ -3,24 +3,23 @@ import 'package:flutter/material.dart';
 
 class PokemonService extends ChangeNotifier {
   int pokemonCount = 1;
-  late PokemonInfo t_poke;
+  late PokemonInfo t_poke; // decare object variable
   String real_type = '';
   int mat_color = 0xff7AC74C;
 
   void changePokemonCount(int value) {
-    pokemonCount += value;
+    pokemonCount += value; 
     if (pokemonCount < 0) {
       pokemonCount = 0;
     }
     notifyListeners();
   }
 
-  void pokemon_type(int i) async {
-    t_poke = await fetchPokemonInfo(i);
-    real_type = t_poke.types[0];
-    print(real_type);
+  void pokemon_type(int i) async { 
+    t_poke = await fetchPokemonInfo(i); //get pokemon type data
+    real_type = t_poke.types[0]; 
     if (real_type == 'normal') {
-      mat_color = 0xffA8A77A;
+      mat_color = 0xffA8A77A; // get color from pokemon data
     } else if (real_type == 'fire') {
       mat_color = 0xffEE8130;
     } else if (real_type == 'water') {
@@ -56,6 +55,6 @@ class PokemonService extends ChangeNotifier {
     } else {
       mat_color = 0xffD685AD7;
     }
-    notifyListeners();
+    notifyListeners(); //notify
   }
 }

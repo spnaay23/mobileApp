@@ -8,6 +8,7 @@ void main() {
 }
 
 class MyPokemonApp extends StatefulWidget {
+  //chage to stateful widget
   const MyPokemonApp({super.key});
 
   @override
@@ -26,16 +27,18 @@ class _MyPokemonAppState extends State<MyPokemonApp> {
     700: const Color.fromRGBO(136, 14, 79, .8),
     800: const Color.fromRGBO(136, 14, 79, .9),
     900: const Color.fromRGBO(136, 14, 79, 1),
-  };
+  }; //for parameter in MaterialColor
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
+        //return this because it will cover in appBar, home , and navigator bar
         create: (_) => PokemonService(),
         child: Consumer<PokemonService>(
           builder: (_, pokemonService, __) {
             return MaterialApp(
               title: 'Pokemon Demo',
               theme: ThemeData(
+                  //changtheme follow the color code (in mat_color and shadeColor)
                   primarySwatch:
                       MaterialColor(pokemonService.mat_color, shadeColor)),
               home: const MyBottomNavigation(),
